@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.18.4/.schema/devbox.schema.json",
+  "packages": [
+    "go@1.26",
+    "golangci-lint@latest"
+  ],
+  "env": {
+    "GOTOOLCHAIN": "local"
+  },
+  "shell": {
+    "scripts": {
+      "build": "go build -o bin/ ./cmd/...",
+      "seed": "go run ./cmd/dora-seed -force",
+      "test": "go test ./...",
+      "lint": "golangci-lint run",
+      "fmt": "golangci-lint fmt"
+    }
+  }
+}

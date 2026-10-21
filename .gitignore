@@ -1,0 +1,9 @@
+# Compiled programs; rebuild with `devbox run build`.
+/bin/
+
+# Databases, fake or real; recreate the fake one with `devbox run seed`.
+/data/
+*.sqlite
+
+# Devbox's per-machine environment.
+.devbox/

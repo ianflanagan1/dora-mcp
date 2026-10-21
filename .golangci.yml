@@ -1,0 +1,18 @@
+version: "2"
+
+linters:
+  # The standard set (errcheck, govet, ineffassign, staticcheck, unused), plus:
+  enable:
+    - errorlint # errors compared with errors.Is/As, not == or type switches
+    - gosec # common security mistakes
+    - misspell
+    - revive # Go's style conventions, such as doc comments on exported names
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
+  settings:
+    goimports:
+      local-prefixes:
+        - github.com/ianflanagan1/dora-mcp
