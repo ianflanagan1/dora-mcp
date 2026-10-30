@@ -58,7 +58,7 @@ func run(ctx context.Context, args []string, stderr io.Writer) error {
 	logger := slog.New(slog.NewTextHandler(stderr, nil))
 	st, err := store.Open(ctx, *dbPath)
 	if errors.Is(err, store.ErrNotFound) {
-		return fmt.Errorf("%w (create it with: devbox run seed)", err)
+		return fmt.Errorf("%w (create it with: devbox run -- task seed)", err)
 	}
 	if err != nil {
 		return err

@@ -37,8 +37,8 @@ A metric with no data to calculate it from is `null`, not zero.
 You need [Devbox](https://www.jetify.com/devbox), which provides Go and golangci-lint at the versions pinned in `devbox.json`.
 
 ```sh
-devbox run build   # compile bin/dora-mcp and bin/dora-seed
-devbox run seed    # create data/dora.sqlite with made-up records
+devbox run -- task build   # compile bin/dora-mcp and bin/dora-seed
+devbox run -- task seed    # create data/dora.sqlite with made-up records
 ```
 
 Then start Claude Code in this directory. It reads `.mcp.json`, asks you to approve the `dora` server, and launches `bin/dora-mcp` for the session.
@@ -62,9 +62,9 @@ The HTTP mode has no authentication, so keep it on `127.0.0.1`. It must have aut
 ## Development
 
 ```sh
-devbox run test    # go test ./...
-devbox run lint    # golangci-lint run
-devbox run fmt     # format and sort imports
+devbox run -- task test    # go test ./...
+devbox run -- task lint    # golangci-lint run
+devbox run -- task fmt     # format and sort imports
 ```
 
 Layout:
@@ -78,4 +78,4 @@ internal/seed/     the fake-data generator
 internal/server/   the MCP tools, free of any transport
 ```
 
-The database and compiled programs are gitignored. Recreate them with `devbox run seed` and `devbox run build`.
+The database and compiled programs are gitignored. Recreate them with `devbox run -- task seed` and `devbox run -- task build`.

@@ -1,0 +1,27 @@
+version: '3'
+
+tasks:
+  build:
+    desc: Compile bin/dora-mcp and bin/dora-seed
+    cmds:
+      - go build -o bin/ ./cmd/...
+
+  seed:
+    desc: Create data/dora.sqlite with made-up records
+    cmds:
+      - go run ./cmd/dora-seed -force
+
+  test:
+    desc: Run the tests
+    cmds:
+      - go test ./...
+
+  lint:
+    desc: Run golangci-lint
+    cmds:
+      - golangci-lint run
+
+  fmt:
+    desc: Format and sort imports
+    cmds:
+      - golangci-lint fmt
