@@ -25,3 +25,9 @@ tasks:
     desc: Format and sort imports
     cmds:
       - golangci-lint fmt
+
+  check:
+    desc: Lint, then test, failing on any problem
+    cmds:
+      - task: lint
+      - task: test

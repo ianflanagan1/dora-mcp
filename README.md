@@ -64,6 +64,7 @@ The HTTP mode has no authentication, so keep it on `127.0.0.1`. It must have aut
 ```sh
 devbox run -- task test    # go test ./...
 devbox run -- task lint    # golangci-lint run
+devbox run -- task check   # lint, then test, failing on any problem
 devbox run -- task fmt     # format and sort imports
 ```
 
