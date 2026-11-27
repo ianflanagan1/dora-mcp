@@ -3,3 +3,7 @@
 # How work reaches the trunk, for repo-list and repo-fix. See ~/projects/cli/repo-tools.
 version = 1
 integration = "direct"
+
+[remotes.origin]
+git-host = "github"
+visibility = "public"
